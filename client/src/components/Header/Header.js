@@ -7,7 +7,7 @@ class Header extends Component {
       <div className="Header">
         <a className="Header-boards-btn" href="#">
           <i className="fa fa-trello Header-boards-btn-icon" aria-hidden="true"></i>
-          <span className="Header-boards-btn-text">Board</span>
+          <span className="Header-boards-btn-text">Boards</span>
         </a>
         <img className="Header-trello-logo" src="https://i.imgur.com/D9zXYd2.png" role="presentation" />
         <a className="Header-profile" href="#">

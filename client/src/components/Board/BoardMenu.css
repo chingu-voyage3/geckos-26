@@ -1,0 +1,25 @@
+.BoardMenu {
+    background: #026da780;
+    display: flex;
+    margin-top: 5px; 
+    padding: 2px 8px;
+}
+
+.name{
+    padding: 8px 10px;
+    color: #ffffff;
+}
+
+.team-btn{
+    margin-left: 5px;
+    padding: 8px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background: #6d686844;
+    text-decoration: none;
+}
+.team-btn:hover{
+    background: #6d686862;
+}

@@ -6,6 +6,7 @@
   padding: 5px 8px;
 }
 
+
 .Header-trello-logo {
   height: 100%;
 }
@@ -18,6 +19,10 @@
   background-color: rgba(255, 255, 255, 0.298);
   color: #f3f3f3;
   text-decoration: none;
+}
+
+.Header-boards-btn:hover{
+  background-color: rgba(255, 255, 255, 0.498);
 }
 
 .Header-boards-btn-icon {
