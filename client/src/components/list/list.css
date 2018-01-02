@@ -1,0 +1,14 @@
+.list{
+    display: flex;
+    min-height: 300px;
+    width: 250px;
+    padding: 10px;
+    background: rgba(201, 201, 201, 0.856);
+    border-radius:10px;
+}
+
+.list-top{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
