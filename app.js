@@ -15,7 +15,7 @@ var flash=require("connect-flash");
 
 // Models
 var Todo=require("./models/todo");
-var User=require("./models/users");
+var User=require("./models/user");
 
 // Config
 var app = express();
@@ -26,7 +26,7 @@ mongoose.connect('mongodb://localhost:27017/geckos');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname+"/public"));
-app.use(methodOverride("_method"));
+// app.use(methodOverride("_method"));
 app.use(flash());
 
 // User Authentication
@@ -44,6 +44,7 @@ app.use(flash());
 // passport.serializeUser(User.serializeUser());
 // passport.deserializeUser(User.deserializeUser());
 
+// ejs for testing atm because Fabien is learning with it as the view output
 app.set("view engine", "ejs");
 
 app.use(function(req, res, next) {
@@ -54,7 +55,7 @@ app.use(function(req, res, next) {
 });
 
 // ROUTES
-var Board = require("./models/boards");
+var Board = require("./models/board");
 
 app.get("/", function(req, res){
   res.redirect("/boards");
