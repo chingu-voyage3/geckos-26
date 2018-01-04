@@ -4,15 +4,15 @@ var Board = require("./models/board");
 var data = [
   {
     title: "Board 1",
-    background: "3F51B5"
+    background: "#3F51B5"
   },
   {
     title: "Board 2",
-    background: "00BCD4"
+    background: "#00BCD4"
   },
   {
     title: "Board 3",
-    background: "FF5722"
+    background: "#FF5722"
   }
 ];
 
