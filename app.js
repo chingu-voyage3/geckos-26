@@ -66,6 +66,7 @@ app.get("/", function(req, res){
 app.get("/boards", function(req, res){
   Board.find({}, function(err, boards){
     if(err){
+      console.log("Error from Index route!");
       console.log(err);
     } else {
       res.render("index", {boards: boards});
@@ -79,6 +80,20 @@ app.get("/boards/new", function(req, res){
 });
 
 // CREATE
+app.post("/boards", function(req, res){
+  // Create board
+  Board.create(req.body, function(err, newBoard){
+    if(err){
+      console.log("Error from create route!");
+      console.log(err);
+    } else {
+      // Redirect to the index
+      res.redirect("/boards");
+    }
+  });
+
+
+});
 
 // SHOW
 
