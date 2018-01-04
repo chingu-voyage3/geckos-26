@@ -1,10 +1,9 @@
 var mongoose = require("mongoose");
 
-var BoardSchema = mongoose.Schema({
+var boardSchema = new mongoose.Schema({
   title: String,
   background: String,
   image: String
 });
 
-
-module.exports = mongoose.Schema("Board", BoardSchema);
+module.exports = mongoose.model("Board", boardSchema);
