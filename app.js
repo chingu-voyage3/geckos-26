@@ -7,8 +7,7 @@ var express = require('express');
 // var LocalStrategy=require("passport-local");
 // var session=require('express-session');
 // var methodOverride=require('method-override');
-
-var flash=require("connect-flash");
+// var flash=require("connect-flash");
 
 
 // require('dotenv').config();  For eniviromental variables
@@ -27,7 +26,7 @@ mongoose.connect('mongodb://localhost:27017/geckos');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname+"/public"));
 // app.use(methodOverride("_method"));
-app.use(flash());
+// app.use(flash());
 
 // User Authentication
 
@@ -47,15 +46,17 @@ app.use(flash());
 // ejs for testing atm because Fabien is learning with it as the view output
 app.set("view engine", "ejs");
 
-app.use(function(req, res, next) {
-    res.locals.currentUser=req.user;
-    res.locals.success=req.flash("success");
-    res.locals.error=req.flash("error");
-    next();
-});
+// app.use(function(req, res, next) {
+//     res.locals.currentUser=req.user;
+//     res.locals.success=req.flash("success");
+//     res.locals.error=req.flash("error");
+//     next();
+// });
 
 // ROUTES
 var Board = require("./models/board");
+var seedDB = require('./seeds');
+seedDB();
 
 app.get("/", function(req, res){
   res.redirect("/boards");
@@ -63,7 +64,7 @@ app.get("/", function(req, res){
 
 // INDEX
 app.get("/boards", function(req, res){
-  Todo.find({}, function(err, boards){
+  Board.find({}, function(err, boards){
     if(err){
       console.log(err);
     } else {
