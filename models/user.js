@@ -1,4 +1,4 @@
-var mongoose=require("mongoose");
+var mongoose = require("mongoose");
 
 // For now lets do without user authentication
 
