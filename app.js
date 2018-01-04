@@ -74,6 +74,9 @@ app.get("/boards", function(req, res){
 });
 
 // NEW
+app.get("/boards/new", function(req, res){
+  res.render("new");
+});
 
 // CREATE
 
