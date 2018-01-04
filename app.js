@@ -91,13 +91,22 @@ app.post("/boards", function(req, res){
       res.redirect("/boards");
     }
   });
-
-
 });
 
 // SHOW
+app.get("/boards/:id", function(req, res){
+  Board.findById(req.params.id, function(err, foundBoard){
+    if(err){
+      console.log("Error from show route!");
+      console.log(err);
+    } else {
+      res.render("show", {board: foundBoard})
+    }
+  });
+});
 
 // UPDATE
+
 
 // DELETE
 
