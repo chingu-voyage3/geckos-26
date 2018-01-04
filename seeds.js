@@ -7,11 +7,11 @@ var data = [
     background: "3F51B5"
   },
   {
-    title: "Board 1",
+    title: "Board 2",
     background: "00BCD4"
   },
   {
-    title: "Board 1",
+    title: "Board 3",
     background: "FF5722"
   }
 ];
