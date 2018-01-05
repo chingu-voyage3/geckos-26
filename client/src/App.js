@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Header from './components/Header/Header';
-import BoardMenu from './components/Board/BoardMenu';
+import BoardMenu from './components/BoardMenu/BoardMenu';
 import List from './components/list/list';
 
 class App extends Component {
@@ -11,7 +11,12 @@ class App extends Component {
       <div className="App">
         <Header />
         <BoardMenu />
-        <List />
+        <div className = "board-content">
+          <List />
+          <List />
+          <List />
+        </div>
+        
       </div>
     );
   }
