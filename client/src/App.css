@@ -3,3 +3,6 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
+.board-content {
+    display: flex;
+}
