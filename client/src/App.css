@@ -1,0 +1,8 @@
+body{
+    background: url('./assets/bg.jpg') center no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.board-content {
+    display: flex;
+}
