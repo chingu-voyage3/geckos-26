@@ -1,0 +1,10 @@
+.card{
+    display: flex;
+    width: 100%;
+    padding: 8px;
+    background: rgba(51, 51, 51, 0.931);
+    color: #fff;
+    min-height: 40px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
