@@ -1,9 +1,6 @@
 var mongoose=require("mongoose");
 var User=require("./user");
 
-
-
-
 var todoSchema=new mongoose.Schema({
     todo:{
         type:String,
