@@ -110,7 +110,7 @@ app.get("/boards/:id", function(req, res){
 
 // DELETE
 
-// Listening on http://localhost:3000
-app.listen(3000, function(){
-  console.log("Application listening on port 3000");
+// Listen for requests
+app.listen(process.env.port || 4000, function(){
+  console.log("Application listening for requests");
 });
