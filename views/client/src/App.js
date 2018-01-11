@@ -6,17 +6,40 @@ import BoardMenu from './components/BoardMenu/BoardMenu';
 import List from './components/list/list';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      lists: []
+    }
+  }
+
+  componentDidMount(){
+      fetch('/api/list')
+      .then(function(list){
+        return list.json();
+      })
+      .then(json => {
+        this.setState({
+          lists: json,
+        });
+      });
+  }
+
   render() {
+    var lists = this.state.lists;
+    lists = lists.map(function(list, index){
+      return(
+        <List list={ list } key={ index } />
+      )
+    });
+
     return (
       <div className="App">
         <Header />
         <BoardMenu />
         <div className = "board-content">
-          <List />
-          <List />
-          <List />
+          {lists}
         </div>
-        
       </div>
     );
   }
