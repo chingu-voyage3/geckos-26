@@ -4,15 +4,21 @@ import Card from '../card/card'
 
 class List extends Component {
   render() {
+    var cards = this.props.list.cards;
+    cards = cards.map(function(card, index){
+      return (
+        <Card card={ card } key={ index } />
+      )
+    });
+
     return (
       <div className="list">
         <div className="list-top">
-            <span>ACT 1</span>
-            <a href><i className="fa fa-bars menu-icon" aria-hidden="true"></i></a>
+            <span>{ this.props.list.title }</span>
+            <a href="#"><i className="fa fa-bars menu-icon" aria-hidden="true"></i></a>
         </div>
         <div className = "cards">
-          <Card />
-          <Card />
+          { cards }
         </div>
       </div>
     );
