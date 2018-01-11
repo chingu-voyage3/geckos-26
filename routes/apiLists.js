@@ -7,9 +7,18 @@ seedDB();
 
 // get a list of lists from the db
 router.get('/list', function(req, res, next){
-  List.find({}).then(function(list){
-    res.send(list);
-  });
+  List.find({})
+    .populate(
+      {
+        path: "cards",
+        populate: {
+          path: "comments",
+          model: "Comment"
+        }
+      })
+    .then(function(list){
+      res.send(list);
+    });
 });
 
 module.exports = router;
