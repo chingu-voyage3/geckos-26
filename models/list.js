@@ -6,8 +6,12 @@ var ListSchema = new Schema({
     type: String,
     required: [true, 'Title field is required']
   },
+  cards: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Card"
+    }
+  ]
 });
 
-var List = mongoose.model('list', ListSchema);
-
-module.exports = List;
+module.exports = mongoose.model('List', ListSchema);
