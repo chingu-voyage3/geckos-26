@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import BoardMenu from './components/BoardMenu/BoardMenu';
 import List from './components/list/list';
+import CreateList from './components/list/createList';
 
 class App extends Component {
   constructor(){
@@ -38,8 +39,9 @@ class App extends Component {
         <Header />
         <BoardMenu />
         <div className = "board-content">
-          {lists}
-          <button id="submit" onClick= { this.handleSubmit }>Submit</button>
+          { lists }
+          <CreateList />
+          <button id="submit">Submit</button>
         </div>
       </div>
     );
