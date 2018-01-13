@@ -36,7 +36,6 @@ class CardModal extends React.Component {
           {this.props.card.title}
           {this.props.card.description}
           {this.props.card.author}
-          {this.props.card.comments}
               
           <div className="footer">
             <button onClick={this.props.onClose}>
