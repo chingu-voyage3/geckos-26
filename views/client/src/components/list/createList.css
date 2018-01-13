@@ -1,0 +1,43 @@
+#createList {
+  width: 250px;
+  height: fit-content; /* fit to content inside */
+  padding: 10px;
+  margin: 20px 0 20px 20px;
+  border-radius:10px;
+  background: rgba(201, 201, 201, 0.856);
+}
+
+
+#createList a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#save {
+  height: 30px;
+  padding: 0 15px;
+  border:none;
+  border-radius: 5px;
+  margin-top: 5px;
+  background: #30c947;
+  color: #fff;
+  font-size: 1em;
+  vertical-align: middle;
+}
+
+#save:hover {
+  background: #10a627;
+}
+
+#cancel {
+  font-size: 1em;
+  margin-left: 5px;
+}
+
+#title {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+  border:none;
+  border-radius: 5px;
+}
