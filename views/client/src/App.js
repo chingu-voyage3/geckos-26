@@ -39,9 +39,25 @@ class App extends Component {
         <BoardMenu />
         <div className = "board-content">
           {lists}
+          <button id="submit" onClick= { this.handleSubmit }>Submit</button>
         </div>
       </div>
     );
+  }
+
+  handleSubmit(event) {
+    var init = {
+      method: 'POST'
+    };
+
+    fetch('api/list', init)
+    .then(function(res){
+        console.log("made a request");
+        return res.json();
+      })
+    .then(function(json){
+      console.log(json);
+    })
   }
 }
 
