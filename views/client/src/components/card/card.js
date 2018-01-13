@@ -19,8 +19,7 @@ class Card extends Component {
       <div className="card" onClick={this.toggleModal}>
         <span>{ this.props.card.title }</span>
         <CardModal show={this.state.isOpen}
-        onClose={this.toggleModal}>
-        `Here's some content for the modal`
+        onClose={this.toggleModal} card={this.props.card}>
         </CardModal>
       </div>
       

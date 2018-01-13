@@ -25,14 +25,19 @@ class CardModal extends React.Component {
       maxWidth: 500,
       minHeight: 300,
       margin: '0 auto',
-      padding: 30
+      padding: 30,
+      color : '#000'
     };
-
+    console.log(this.props.card);
     return (
       <div className="backdrop" style={backdropStyle}>
         <div className="modal" style={modalStyle}>
-          {this.props.children}
-
+        
+          {this.props.card.title}
+          {this.props.card.description}
+          {this.props.card.author}
+          {this.props.card.comments}
+              
           <div className="footer">
             <button onClick={this.props.onClose}>
               Close
