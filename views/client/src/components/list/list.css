@@ -1,6 +1,6 @@
 .list{
-    min-height: 300px;
     width: 250px;
+    height: fit-content; /* fit to content inside */
     padding: 10px;
     background: rgba(201, 201, 201, 0.856);
     border-radius:10px;
@@ -11,6 +11,5 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 8px; 
+    margin-bottom: 8px;
 }
-
