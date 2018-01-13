@@ -28,15 +28,25 @@ class CardModal extends React.Component {
       padding: 30,
       color : '#000'
     };
-    console.log(this.props.card);
+    var comments = this.props.card.comments;
+    var comments_list = comments.map(function(comment, index){
+      return (
+        <div className="comments"><h5>{comment.author}</h5>
+        <p>{comment.text}</p>
+        <p>{comment.created_date}</p>
+        </div>
+      );
+      
+    });
     return (
       <div className="backdrop" style={backdropStyle}>
         <div className="modal" style={modalStyle}>
-        
-          {this.props.card.title}
-          {this.props.card.description}
-          {this.props.card.author}
-              
+    
+          <h2>{this.props.card.title}</h2>
+          <p>{this.props.card.description}</p>
+          <h5>Author : {this.props.card.author}</h5>    
+          <h4>Comments</h4> 
+          {comments_list}
           <div className="footer">
             <button onClick={this.props.onClose}>
               Close
