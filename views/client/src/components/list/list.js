@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import './list.css';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+import update from 'immutability-helper';import './list.css';
 import Card from '../card/card'
 
 class List extends Component {
