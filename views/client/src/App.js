@@ -3,7 +3,7 @@ import './App.css';
 
 import Header from './components/Header/Header';
 import BoardMenu from './components/BoardMenu/BoardMenu';
-import List from './components/list/list';
+import List from './components/List/List';
 
 class App extends Component {
   constructor(){
