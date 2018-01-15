@@ -19,7 +19,6 @@ class App extends Component {
         return list.json();
       })
       .then(json => {
-        console.log(json);
         this.setState({
           lists: json,
         });
