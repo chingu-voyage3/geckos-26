@@ -36,20 +36,20 @@ class List extends Component {
   };
 
   render() {
-    const { cards } = this.state;
+    const { cards, listTitle } = this.props;
     return (
       <div className="list">
         <div className="list-top">
-            <span>ACT 1</span>
+            <span>{listTitle}</span>
             <a href="#"><i className="fa fa-bars menu-icon" aria-hidden="true"></i></a>
         </div>
         <div className="cards">
           {cards.map((card, i) => (
             <Card
-              key={card.id}
+              key={card._id}
               index={i}
-              id={card.id}
-              text={card.text}
+              id={card._id}
+              text={card.title}
               moveCard={this.moveCard}
             />
           ))}
