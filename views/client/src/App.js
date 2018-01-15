@@ -32,7 +32,7 @@ class App extends Component {
         <List list={ list } key={ index } />
       )
     });
-
+    
     return (
       <div className="App">
         <Header />
