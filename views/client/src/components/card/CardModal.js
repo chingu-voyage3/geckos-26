@@ -2,7 +2,7 @@ import React from 'react';
 
 class CardModal extends React.Component {
   render() {
-    // Render nothing if the "show" prop is false
+    // Render nothing if the "show" prop is false in the card
     if(!this.props.show) {
       return null;
     }
@@ -28,20 +28,18 @@ class CardModal extends React.Component {
       padding: 30,
       color : '#000'
     };
-    var comments = this.props.card.comments;
+    var comments = this.props.card.comments; // Get comments array from the props
     var comments_list = comments.map(function(comment, index){
       return (
         <div className="comments"><h5>{comment.author}</h5>
         <p>{comment.text}</p>
         <p>{comment.created_date}</p>
         </div>
-      );
-      
+      ); //returns a comment format 
     });
     return (
       <div className="backdrop" style={backdropStyle}>
         <div className="modal" style={modalStyle}>
-    
           <h2>{this.props.card.title}</h2>
           <p>{this.props.card.description}</p>
           <h5>Author : {this.props.card.author}</h5>    
@@ -54,7 +52,7 @@ class CardModal extends React.Component {
           </div>
         </div>
       </div>
-    );
+    ); // the modal format
   }
 }
 
