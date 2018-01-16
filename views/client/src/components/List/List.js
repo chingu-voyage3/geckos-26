@@ -27,7 +27,8 @@ class List extends Component {
   };
 
   render() {
-    const { cards, listTitle } = this.props;
+    const { listTitle } = this.props;
+    const { cards } = this.state;
     return (
       <div className="list">
         <div className="list-top">
@@ -37,7 +38,7 @@ class List extends Component {
         <div className="cards">
           {cards.map((card, i) => (
             <Card
-              key={card._id}
+              key={card.id}
               index={i}
               moveCard={this.moveCard}
               card={card}
