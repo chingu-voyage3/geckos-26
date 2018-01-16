@@ -9,16 +9,7 @@ class List extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: [
-        {
-          id: 1,
-          text: 'First Card',
-        },
-        {
-          id: 2,
-          text: 'Second Card',
-        },
-      ]
+      cards: this.props.cards
     };
   }
 
@@ -48,9 +39,8 @@ class List extends Component {
             <Card
               key={card._id}
               index={i}
-              id={card._id}
-              text={card.title}
               moveCard={this.moveCard}
+              card={card}
             />
           ))}
         </div>

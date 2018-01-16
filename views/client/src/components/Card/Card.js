@@ -4,11 +4,13 @@ import { DragSource, DropTarget } from 'react-dnd';
 import flow from 'lodash/flow';
 import ItemTypes from './ItemTypes';
 import './Card.css';
+import CardModal from './CardModal';
+
 
 const cardSource = {
   beginDrag(props) {
     return {
-      id: props.id,
+      id: props.card._id,
       index: props.index,
     }
   },
@@ -60,13 +62,27 @@ const cardTarget = {
     monitor.getItem().index = hoverIndex
   },
 }
-
 class Card extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { isOpen: false }; // if the modal for current card is open
+  }
+
+  toggleModal = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  } // to change the open state of modal for current card 
+  
+  
   render() {
-    const { text, isDragging, connectDragSource, connectDropTarget } = this.props;    
+    const { isDragging, connectDragSource, connectDropTarget } = this.props;
     return connectDragSource(connectDropTarget(
-      <div className="card">
-        <span>{text}</span>
+      <div className="card" onClick={this.toggleModal}>
+        <span>{ this.props.card.title }</span>
+        <CardModal show={this.state.isOpen} // shows modal only if the "isOpen" property is true
+        onClose={this.toggleModal} card={this.props.card}>
+        </CardModal>
       </div>
     ));
   }
