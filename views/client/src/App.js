@@ -3,8 +3,8 @@ import './App.css';
 
 import Header from './components/Header/Header';
 import BoardMenu from './components/BoardMenu/BoardMenu';
-import List from './components/list/list';
-import CreateList from './components/list/createList';
+import List from './components/List/List';
+import CreateList from './components/List/CreateList';
 
 class App extends Component {
   constructor(){
@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       lists: []
     }
+    this.handleSubmit = this.handleSubmit.bind(this); // Bind this otherwise refs do not work
   }
 
   componentDidMount(){
@@ -40,7 +41,7 @@ class App extends Component {
         <BoardMenu />
         <div className = "board-content">
           { lists }
-          <CreateList />
+          <CreateList handleSubmit={ this.handleSubmit } title={ title => this.title = title } />
           <button id="submit">Submit</button>
         </div>
       </div>
@@ -48,16 +49,21 @@ class App extends Component {
   }
 
   handleSubmit(event) {
-    var init = {
-      method: 'POST'
-    };
+    event.preventDefault(); // Prevent the page from reloading
+    
+    var data = {
+      title: this.title.value,
+      author: "Fabien",
+    }
 
-    fetch('api/list', init)
-    .then(function(res){
+    fetch('api/list/new', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(data),
+    }).then(function(res){
         console.log("made a request");
         return res.json();
-      })
-    .then(function(json){
+    }).then(function(json){
       console.log(json);
     })
   }
