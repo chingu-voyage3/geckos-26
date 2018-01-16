@@ -22,9 +22,10 @@ router.get('/list', function(req, res, next){
 });
 
 // create list route
-router.post("/list", function(req, res, next){
-  console.log('Got a post request!');
-  res.send({ text: "Got your request!" });
+router.post("/list/new", function(req, res, next){
+  List.create(req.body).then(function(list){
+    res.send(list);
+  }).catch(next);
 });
 
 module.exports = router;
