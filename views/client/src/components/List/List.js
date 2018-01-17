@@ -9,16 +9,7 @@ class List extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: [
-        {
-          id: 1,
-          text: 'First Card',
-        },
-        {
-          id: 2,
-          text: 'Second Card',
-        },
-      ]
+      cards: this.props.cards
     };
   }
 
@@ -36,11 +27,12 @@ class List extends Component {
   };
 
   render() {
+    const { listTitle } = this.props;
     const { cards } = this.state;
     return (
       <div className="list">
         <div className="list-top">
-            <span>ACT 1</span>
+            <span>{listTitle}</span>
             <a href="#"><i className="fa fa-bars menu-icon" aria-hidden="true"></i></a>
         </div>
         <div className="cards">
@@ -48,9 +40,8 @@ class List extends Component {
             <Card
               key={card.id}
               index={i}
-              id={card.id}
-              text={card.text}
               moveCard={this.moveCard}
+              card={card}
             />
           ))}
         </div>

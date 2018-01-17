@@ -84,6 +84,38 @@ function seedDB(){
                 }
               );
             }
+            Card.create(
+              {
+                  title: "Another Card",
+                  description: "This is a great note",
+                  author: "Archit"
+              }, function(err, card){
+                if(err){
+                  console.log(err);
+                } else {
+                  // Add a comment in the list
+                  Comment.create(
+                    {
+                      text: "This is a comment",
+                      author: "Anonymous"
+                    },
+                    function(err, comment){
+                      if(err){
+                        console.log(err);
+                      } else {
+                        // Add a comment in the card
+                        card.comments.push(comment);
+                        card.save()
+                      }
+                    }
+                  )
+
+                  list.cards.push(card);
+                  list.save();
+                  console.log("Created a new card");
+                }
+              }
+            );
           }
         });
       });

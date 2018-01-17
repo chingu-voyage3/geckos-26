@@ -15,7 +15,7 @@ class App extends Component {
 
   componentDidMount(){
       fetch('/api/list')
-      .then(function(list){
+      .then(list => {
         return list.json();
       })
       .then(json => {
@@ -27,12 +27,12 @@ class App extends Component {
 
   render() {
     var lists = this.state.lists;
-    lists = lists.map(function(list, index){
+    lists = lists.map((list, index) => {
       return(
-        <List list={ list } key={ index } />
+        <List listTitle={ list.title } key={ index } cards={ list.cards } />
       )
     });
-    
+
     return (
       <div className="App">
         <Header />
