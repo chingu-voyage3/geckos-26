@@ -45,9 +45,16 @@ router.put('/list/:id', function(req, res, next){
 });
 
 // DELETE list route
-router.delete('/list/:id', function(req, res, next){  
-  List.findByIdAndRemove({_id: req.params.id}).then(function(list){
-    res.send(list);
+// Also delete related comments
+router.delete('/list/:id', function(req, res, next){
+  List.findOne({_id: req.params.id}).then(function(list){
+    list.cards.forEach(function(card){
+      Card.findByIdAndRemove(card).then(function(){
+        List.findByIdAndRemove({_id: req.params.id}).then(function(list){
+          res.send(list);
+        });
+      });
+    });
   });
 });
 
