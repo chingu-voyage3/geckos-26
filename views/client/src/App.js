@@ -56,7 +56,7 @@ class App extends Component {
       author: "Fabien",
     }
 
-    fetch('api/list/new', {
+    fetch('api/list', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(data),
